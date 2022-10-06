@@ -18,7 +18,7 @@
     },
     "right-label_volume": {
         "text": "",
-        "command": "wpctl get-volume @DEFAULT_AUDIO_SINK@"
+        "command": "wpctl get-volume @DEFAULT_SINK@|tr -d 'Volume: '"
     },
     "right-spacing_end": {
         "spacing_end": 5
