@@ -18,7 +18,7 @@
     },
     "right-label_volume": {
         "text": "",
-        "command": "wpctl get-volume @DEFAULT_SINK@|tr -d 'Volume: '"
+        "command": "wpctl get-volume @DEFAULT_SINK@ | awk '{print  $2}' | sed -e 's/^0.//'   -e 's/^1./1/'  -e 's/$/%/'"
     },
     "right-spacing_end": {
         "spacing_end": 5
