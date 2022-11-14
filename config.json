@@ -10,7 +10,7 @@
 	},
     "left-label_ws": {
         "text": "",
-        "command": "hyprctl -j workspaces | jq '.[] .id' | sort -n | tr '\n' ' '"
+        "command": "for i in $(hyprctl workspaces -j | jq -r 'sort_by(.id) | .[].id'); do if [[ $i == $(hyprctl monitors -j | jq -r '.[].activeWorkspace.id') ]]; then echo [$i] | tr '\n' ' '; else echo $i | tr '\n' ' '; fi; done"
     },
     "centered-label_time": {
         "text": "",
