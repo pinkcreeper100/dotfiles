@@ -1,29 +1,29 @@
 {
-	"hybrid": {
-		"namespace": "hybrid-bar"
-	}
-	"background": {
-		"r": 10,
-		"g": 10,
-		"b": 10,
-		"a": 1.0
-	},
-	"left-spacing_end": {
-		"spacing_end": 5
-	},
-	"left-label_ws": {
-		"text": "",
-		"command": "for i in $(hyprctl workspaces -j | jq -r 'sort_by(.id) | .[].id'); do if [[ $i == $(hyprctl monitors -j | jq -r '.[].activeWorkspace.id') ]]; then echo [$i] | tr '\n' ' '; else echo $i | tr '\n' ' '; fi; done"
-	},
-	"centered-label_time": {
-		"text": "",
-		"command": "date +%H:%M" 
-	},
-	"right-label_volume": {
-		"text": "",
-		"command": "wpctl get-volume @DEFAULT_SINK@ | awk '{print  $2}' | sed -e 's/^0.//'   -e 's/^1./1/'  -e 's/$/%/'"
-	},
-	"right-spacing_end": {
-		"spacing_end": 5
-	}
+    "hybrid": {
+        "namespace": "hybrid-bar"
+    }
+    "background": {
+        "r": 10,
+        "g": 10,
+        "b": 10,
+        "a": 1.0
+    },
+    "left-spacing_end": {
+        "spacing_end": 5
+    },
+    "left-label_ws": {
+        "text": "",
+        "command": "for i in $(hyprctl workspaces -j | jq -r 'sort_by(.id) | .[].id'); do if [[ $i == $(hyprctl monitors -j | jq -r '.[].activeWorkspace.id') ]]; then echo [$i] | tr '\n' ' '; else echo $i | tr '\n' ' '; fi; done"
+    },
+    "centered-label_time": {
+        "text": "",
+        "command": "date +%H:%M" 
+    },
+    "right-label_volume": {
+        "text": "",
+        "command": "wpctl get-volume @DEFAULT_SINK@ | awk '{print  $2}' | sed -e 's/^0.//'   -e 's/^1./1/'  -e 's/$/%/'"
+    },
+    "right-spacing_end": {
+        "spacing_end": 5
+    }
 }
